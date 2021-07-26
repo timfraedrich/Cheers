@@ -102,7 +102,7 @@ public class CustomToast: BaseToast {
                 make.edges.equalToSuperview()
             }
             
-        }, isDismissable: true)
+        }, isDismissable: false)
         
     }
     
@@ -111,8 +111,10 @@ public class CustomToast: BaseToast {
     }
     
     public func doSomeMagic() {
-        UIView.animate(withDuration: 2) {
-            self.label.textColor = .blue
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            UIView.transition(with: self.label, duration: 3, options: .transitionCrossDissolve) {
+                self.label.textColor = .blue
+            }
         }
     }
 }
@@ -120,9 +122,12 @@ public class CustomToast: BaseToast {
 // in another class
 
 let toast = CustomToast()
-Cheers.show(toast)
 
-toast.doSomeMagic()
+toast.onDisplay = { _ in
+    toast.doSomeMagic()
+}
+
+Cheers.show(toast)
 ```
 
 ## License
