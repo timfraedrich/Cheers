@@ -22,5 +22,6 @@ let package = Package(
                 .process("Resources/close.png")
             ]
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
