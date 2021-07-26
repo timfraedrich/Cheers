@@ -128,7 +128,7 @@ open class BaseToast: UIView {
         
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         self.isDismissable = true
         super.init(coder: coder)
     }
