@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CheersLib"
-  spec.version      = "0.1.2"
+  spec.version      = "0.1.3"
   spec.summary      = "A toast library for iOS"
   spec.description  = <<-DESC
 Cheers is a highly customisable toast library for iOS written in Swift. It offers an alternate presentation style to the UIAlertViewController, by being displayed over the entire window and permitting interaction with other views while being presented.
@@ -16,5 +16,6 @@ Cheers is a highly customisable toast library for iOS written in Swift. It offer
   spec.source_files  = "Sources/Cheers/*"
   spec.frameworks = 'Foundation', 'UIKit'
   spec.dependency "SnapKit", "~> 5.0.1"
+  spec.resource_bundles = { 'CheersLib' => ['Sources/Cheers/*.{xib,storyboard,xcassets}'] }
 
 end
