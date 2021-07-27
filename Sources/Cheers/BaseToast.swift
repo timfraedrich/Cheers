@@ -41,12 +41,10 @@ open class BaseToast: UIView {
     /// The button used to manually dismiss the toast
     private let dismissButton: UIButton = {
         
-        let moduleBundle = Bundle(for: Cheers.self)
-        let imagePath = moduleBundle.path(forResource: "close", ofType: "png")
-        let closeImage = UIImage(contentsOfFile: imagePath ?? "nil")
-        
         let button = UIButton()
-        button.setImage(closeImage, for: .normal)
+        
+        let image = UIImage(named: "close", in: Bundle.module, compatibleWith: .none)
+        button.setImage(image, for: .normal)
         
         return button
         

@@ -13,7 +13,7 @@ Cheers is a highly customisable toast library for iOS written in Swift. It offer
   spec.platform     = :ios, "12.0"
   spec.ios.deployment_target = '12.0'
   spec.source       = { :git => "https://github.com/timfraedrich/Cheers.git", :tag => "#{spec.version}" }
-  spec.source_files  = "Sources/Cheers/*.swift", "Resources/*"
+  spec.source_files  = "Sources/Cheers/*"
   spec.frameworks = 'Foundation', 'UIKit'
   spec.dependency "SnapKit", "~> 5.0.1"
 
