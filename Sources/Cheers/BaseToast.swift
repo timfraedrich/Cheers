@@ -43,7 +43,7 @@ open class BaseToast: UIView {
         
         let button = UIButton()
         
-        let image = UIImage(named: "close", in: Bundle.module, compatibleWith: .none)
+        let image = UIImage(named: "close", in: Bundle.package, compatibleWith: .none)
         button.setImage(image, for: .normal)
         
         return button
