@@ -42,8 +42,8 @@ open class BaseToast: UIView {
     private let dismissButton: UIButton = {
         
         let moduleBundle = Bundle(for: Cheers.self)
-        let imagePath = moduleBundle.path(forResource: "close", ofType: "png", inDirectory: "Resource") ?? ""
-        let closeImage = UIImage(contentsOfFile: imagePath)
+        let imagePath = moduleBundle.path(forResource: "close", ofType: "png")
+        let closeImage = UIImage(contentsOfFile: imagePath ?? "nil")
         
         let button = UIButton()
         button.setImage(closeImage, for: .normal)
