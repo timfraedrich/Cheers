@@ -64,6 +64,15 @@ public final class Cheers {
             }
         }()
         
+        /// The default tint color used for all subviews of this view
+        public static var tintColor: UIColor = {
+            if #available(iOS 13.0, *) {
+                return UIColor.label.withAlphaComponent(0.5)
+            } else {
+                return UIColor.black.withAlphaComponent(0.5)
+            }
+        }()
+        
         /// The default corner radius used for rounding off the toast.
         public static var cornerRadius: CGFloat = 16
         
@@ -72,7 +81,6 @@ public final class Cheers {
         
         /// The default height and width of the dismiss button.
         public static var dismissButtonSize: CGFloat = 36
-        
         
     }
     

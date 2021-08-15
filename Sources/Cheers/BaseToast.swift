@@ -43,7 +43,11 @@ open class BaseToast: UIView {
         
         let button = UIButton()
         
-        let image = UIImage(named: "close", in: Bundle.package, compatibleWith: .none)
+        let image = UIImage(
+            named: "close",
+            in: Bundle.package,
+            compatibleWith: .none
+        )?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
         
         return button
@@ -79,9 +83,11 @@ open class BaseToast: UIView {
         
         super.init(frame: .zero)
         
-        self.layer.shadowColor = UIColor.gray.cgColor
+        self.tintColor = Cheers.Preferences.tintColor
+        
+        self.layer.shadowColor = UIColor.darkGray.withAlphaComponent(0.5).cgColor
         self.layer.shadowOpacity = 0.25
-        self.layer.shadowOffset = .zero
+        self.layer.shadowOffset = CGSize(width: 0, height: 5)
         self.layer.shadowRadius = 10
         
         self.layer.cornerRadius = self.cornerRadius
